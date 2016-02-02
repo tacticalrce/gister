@@ -1,0 +1,41 @@
+Hi CS6903 Project 2 Grader! :)
+
+If you're reading this, you'd like to know what our development environment is.
+
+Well, it's pretty easy. We dev'd and tested both on Windows (7, 64-bit) and Ubuntu (Kali Linux 2.0 64-bit) without issues.
+
+We only used python (dev'd and tested with Python 2.7.10 ; we don't fuss around with 3.0 shenanigans).
+
+Regarding dependencies, it's fairly easy:
+* Basic internet connection (need SSL access to API.GITHUB.com)
+* Python pip (default)
+  - On Windows: c:\python27\scripts\pip.exe install <package_name>
+  - On Ubuntu:  pip install <package_name>
+* Use pip to install 3 packages:
+  - pyaes
+  - requests
+  - pyqrcode
+
+Once you have that working, you can use the scripts pretty easily.
+* Come up with a pre-shared passcode (10 char minimum)
+* Run gister_transmit.py with one argument: the file you're trying to transfer
+* Once that's finished, it *should* pop up your default web browser with the Gist ID and Message Salt
+  - If you don't have a browser installed (weird), then the log messages will show you this data
+    - "Generated Salt:" -> Message Salt
+    - "GIST ID:" -> Gist Message ID
+* Run the gister_receive.py script with those two parameters
+  - gister_receive.py <gist_id> <message salt>
+* It will write the file to your current working directory with the date/time file stamp as the name
+
+
+If you're feeling bored, you can also run our test suite. It takes ~45 minutes, and exercises all components.
+Just execute "tester.py" and it will log everything to the screen.
+
+
+Feel free to let us know (adp360@nyu.edu ; njr5@nyu.edu) in case you have any issues.
+We tested it ourselves on 2 systems each, and had a few friends give it a shot without any issues using the above directions.
+If anything goes wrong, it's absolutely unexpected and we feel confident we can run it down.
+
+Thanks!
+
+~andre/nate
